@@ -25,9 +25,9 @@ public class TennisCourtService {
         });
     }
 
-    public TennisCourtDTO findTennisCourtWithSchedulesById(Long tennisCourtId) {
+    public TennisCourtDTO findTennisCourtWithFreeSchedulesById(Long tennisCourtId) {
         TennisCourtDTO tennisCourtDTO = findTennisCourtById(tennisCourtId);
-        tennisCourtDTO.setTennisCourtSchedules(scheduleService.findSchedulesByTennisCourtId(tennisCourtId));
+        tennisCourtDTO.setTennisCourtSchedules(scheduleService.findFreeSchedulesByTennisCourtId(tennisCourtId));
         return tennisCourtDTO;
     }
 }
