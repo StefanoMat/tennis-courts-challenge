@@ -1,5 +1,6 @@
-package com.tenniscourts.reservations;
+package com.tenniscourts.schedules;
 
+import com.tenniscourts.reservations.ReservationService;
 import com.tenniscourts.schedules.*;
 import com.tenniscourts.tenniscourts.TennisCourtDTO;
 import com.tenniscourts.tenniscourts.TennisCourtService;
