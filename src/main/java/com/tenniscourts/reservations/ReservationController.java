@@ -19,7 +19,9 @@ public class ReservationController extends BaseRestController {
         return ResponseEntity.created(locationByEntity(reservationService.bookReservation(createReservationRequestDTO).getId())).build();
     }
 
-    public ResponseEntity<ReservationDTO> findReservation(Long reservationId) {
+    @ApiOperation(value = "Return reservation by id")
+    @GetMapping("{reservationId}")
+    public ResponseEntity<ReservationDTO> findReservation(@PathVariable Long reservationId) {
         return ResponseEntity.ok(reservationService.findReservation(reservationId));
     }
 
