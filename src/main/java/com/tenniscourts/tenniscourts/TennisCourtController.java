@@ -1,6 +1,7 @@
 package com.tenniscourts.tenniscourts;
 
 import com.tenniscourts.config.BaseRestController;
+import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,7 @@ public class TennisCourtController extends BaseRestController {
     }
 
     //TODO: implement rest and swagger
+    @ApiOperation(value = "Return list of all schedules free of a tennis court")
     @GetMapping("{tennisCourtId}/schedules/free")
     public ResponseEntity<TennisCourtDTO> findTennisCourtWithFreeSchedulesById(@PathVariable Long tennisCourtId) {
         return ResponseEntity.ok(tennisCourtService.findTennisCourtWithFreeSchedulesById(tennisCourtId));
