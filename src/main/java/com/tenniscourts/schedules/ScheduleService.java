@@ -11,14 +11,23 @@ import java.util.List;
 
 @Service
 public class ScheduleService {
-    @Autowired
     private ScheduleRepository scheduleRepository;
-
     @Autowired
+    public void setScheduleRepository(ScheduleRepository scheduleRepository) {
+        this.scheduleRepository = scheduleRepository;
+    }
+
     private TennisCourtService tennisCourtService;
-
     @Autowired
+    public void setTennisCourtService(TennisCourtService tennisCourtService) {
+        this.tennisCourtService = tennisCourtService;
+    }
+
     private ScheduleMapper scheduleMapper;
+    @Autowired
+    public void setScheduleMapper(ScheduleMapper scheduleMapper) {
+        this.scheduleMapper = scheduleMapper;
+    }
 
     public ScheduleDTO addSchedule(Long tennisCourtId, CreateScheduleRequestDTO createScheduleRequestDTO) {
         var tennisCourt = tennisCourtService.findTennisCourtById(tennisCourtId);
